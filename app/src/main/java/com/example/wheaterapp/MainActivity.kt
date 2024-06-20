@@ -115,7 +115,7 @@ class MainActivity : AppCompatActivity(), CityAdapter.OnItemClickListener {
             .build()
             .create(ApiInterface::class.java)
 
-        val response = retrofit.getWeatherData(city, "f648b4b6f9e9b11383ec6b3187cc253e", "metric")
+        val response = retrofit.getWeatherData(city, "YOUR API KEY", "metric")
         response.enqueue(object : Callback<WeatherApp>{
             override fun onResponse(call: Call<WeatherApp>, response: Response<WeatherApp>) {
                 val responseBody = response.body()
