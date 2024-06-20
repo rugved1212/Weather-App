@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/day_gradient"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/wheather_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weather"
+        android:textSize="35dp"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/white"
+        android:layout_margin="25dp"/>
+
+    <SearchView
+        android:id="@+id/search_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="25dp"
+        android:maxWidth="200dp"
+        android:searchIcon="@drawable/search_location_icon"
+        android:queryHint="Enter City"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/wheather_img"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        app:lottie_repeatMode="restart"
+        app:lottie_rawRes="@raw/load"/>
+
+    <TextView
+        android:id="@+id/loc_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wheather_img"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppinsbold"
+        android:drawableTint="@color/white"
+        android:drawableLeft="@drawable/location"
+        android:drawablePadding="10dp"/>
+
+    <TextView
+        android:id="@+id/temp_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loc_text"
+        android:layout_centerHorizontal="true"
+        android:text="°C"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:fontFamily="@font/poppinsbold"/>
+
+    <TextView
+        android:id="@+id/temp_min_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min: 0.0°C  ---  Max: 0.0°C"
+        android:textSize="16dp"
+        android:layout_below="@id/temp_text"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/humidity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temp_min_max"
+        android:layout_alignStart="@id/temp_min_max"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/humidity_svg"
+        android:fontFamily="@font/poppinsregular"
+        android:text="0"
+        android:textSize="16dp"
+        android:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:drawablePadding="5dp"/>
+
+    <TextView
+        android:id="@+id/wind_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temp_min_max"
+        android:layout_alignEnd="@id/temp_min_max"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppinsregular"
+        android:drawableLeft="@drawable/wind_svg"
+        android:text="0.0m/s"
+        android:textSize="16dp"
+        android:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:drawablePadding="5dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_of_cities"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:scrollbars="horizontal"/>
+
+    <com.github.nikartm.button.FitButton
+        android:visibility="gone"
+        android:id="@+id/add_city"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:fb_icon="@drawable/add_icon"
+        app:fb_backgroundColor="#88000000"
+        app:fb_iconPosition="center"
+        app:fb_iconMarginStart="7dp"
+        app:fb_iconMarginTop="7dp"
+        app:fb_iconWidth="50dp"
+        app:fb_iconHeight="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        app:fb_shape="circle"
+        app:fb_borderWidth="3dp"
+        app:fb_borderColor="@color/white"/>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"/>
+
+</RelativeLayout>

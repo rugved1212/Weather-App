@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash"
+    tools:context=".SplashScreen">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Weather App"
+        android:textSize="45dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppinsbold"
+        android:elevation="50dp"
+        android:shadowRadius="20"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowColor="@color/black"/>
+
+</RelativeLayout>
